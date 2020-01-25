@@ -1,0 +1,139 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #FAFAFA;
+	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#app {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+h1 {
+	color: black;
+}
+
+.main-content {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.preview-container {
+	width: 350px;
+	max-width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.preview-container {
+	margin-top: 32px;
+}
+
+.preview-container > span {
+	padding: 6px 12px;
+	min-width: 75px;
+	border-radius: 25px;
+}
+
+.preview-container > span.ok {
+	color: white;
+	background-color: green;
+}
+
+.preview-container > span.warning {
+	color: black;
+	background-color: orange;
+}
+
+.preview-container > span.error {
+	color: black;
+	background-color: red;
+}
+
+.preview-container > span + span {
+	margin-left: 8px;
+}
+
+.preview {
+	text-align: center;
+	padding: 16px 32px;
+	margin-top: 8px;
+	width: 100%;
+	border-radius: 2px;
+}
+
+.preview.large {
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+form {
+	display: inline-flex;
+	flex-direction: column;
+	padding-right: 24px;
+}
+
+form > * + * {
+	margin-top: 16px;
+}
+
+.input-field {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-field > input {
+	padding-left: 16px;
+	border: 2px solid grey;
+	border-radius: 2px;
+
+	line-height: 30px;
+}
+
+.input-field > span {
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 17px;
+}
+
+.contrast-window {
+	border: 4px solid transparent;
+	border-radius: 2px;
+	padding: 24px;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contrast-window.ok {
+	border-color: green;
+}
+
+.contrast-window.warning {
+	border-color: orange;
+}
+
+.contrast-window.error {
+	border-color: red;
+}
+
+.contrast-ratio {
+	font-size: 2rem;
+}
