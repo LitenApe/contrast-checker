@@ -1,9 +1,10 @@
 import { h } from 'preact';
+import { useContext } from 'preact/hooks';
 
-import { contrast } from '../utils'
+import { ColoursContext } from '../contexts/colours';
 
-const ContrastDisplay = ({ foreground, background }) => {
-    const ratio = parseInt((contrast(foreground, background) * 100), 10) / 100
+const ContrastDisplay = () => {
+    const { ratio } = useContext(ColoursContext)
     let modifiers = 'contrast-window'
 
     if (ratio > 10) {

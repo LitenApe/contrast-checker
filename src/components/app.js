@@ -1,41 +1,22 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { ColoursProvider } from '../contexts/colours';
 
-import InputField from './InputField';
 import ContrastDisplay from './ContrastDisplay';
 import PreviewDisplay from './PreviewDisplay';
+import InputForm from './InputForm';
 
 const App = () => {
-	const [foreground, setForeground] = useState('000')
-	const [background, setBackground] = useState('fff')
-
 	return (
-		<div id="app">
-			<h1>Contrast Ratio Checker</h1>
-
-			<div className="main-content">
-				<form onSubmit={(e) => e.preventDefault()}>
-					<InputField
-						label="foreground"
-						value={foreground}
-						onInput={(e) => setForeground(e.target.value)}
-					/>
-					<InputField
-						label="background"
-						value={background}
-						onInput={(e) => setBackground(e.target.value)}
-						/>
-				</form>
-				<ContrastDisplay
-					foreground={foreground}
-					background={background}
-				/>
+		<ColoursProvider>
+			<div id="app">
+				<h1>Contrast Ratio Checker</h1>
+				<div className="main-content">
+					<InputForm />
+					<ContrastDisplay />
+				</div>
+				<PreviewDisplay />
 			</div>
-			<PreviewDisplay
-				foreground={foreground}
-				background={background}
-			/>
-		</div>
+		</ColoursProvider>
 	);
 };
 

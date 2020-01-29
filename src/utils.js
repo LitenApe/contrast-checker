@@ -1,6 +1,6 @@
-export const isHex = (value) => RegExp('(^#?([a-fA-F0-9]{3}|[a-fA-F0-9]{6}))$').test(value);
+export const isHex = (value) => RegExp(/(^#?([a-f\d]{3}|[a-f\d]{6}))$/i).test(value);
 
-export const isCompactRGB = (value) => RegExp('^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[\,\.]{1}[ ]?){2}(?:25[0-5]|2[0-4][\d]|[01]?[0-9][0-9]?)$').test(value);
+export const isCompactRGB = (value) => RegExp(/^(?:(?:25[0-5]|2[0-4][\d]|[01]?[\d][\d]?)[\,\.]{1}[ ]?){2}(?:25[0-5]|2[0-4][\d]|[01]?[\d][\d]?)$/i).test(value);
 
 export const isFullRGB = (value) => value.startsWith('rgb(') && value.endsWith(')') && isCompactRGB(value.slice(4, -1));
 
@@ -18,13 +18,13 @@ export function convertToValidColour(value) {
     }
 }
 
-function hexToRgb(hex) {
+export function hexToRgb(hex) {
     hex = hex.replace(
-        /^#?([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])$/i,
+        /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
         (_, r, g, b) => r + r + g + g + b + b
 	);
 
-    var result = /^#?([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})$/i.exec(hex);
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
     return result ? `${
         parseInt(result[1], 16)

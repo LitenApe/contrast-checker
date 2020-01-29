@@ -1,9 +1,12 @@
 import { h, Fragment } from 'preact'
+import { useContext } from 'preact/hooks'
 
-import { convertToValidColour, contrast } from '../utils'
+import { convertToValidColour } from '../utils'
 
-const PreviewDisplay = ({foreground, background}) => {
-    const ratio = contrast(foreground, background)
+import { ColoursContext } from '../contexts/colours';
+
+const PreviewDisplay = () => {
+    const { foreground, background, ratio } = useContext(ColoursContext)
 
     const previewStyling = {
 		color: convertToValidColour(foreground),
@@ -19,7 +22,7 @@ const PreviewDisplay = ({foreground, background}) => {
         modifiersNormalAA = "ok"
         modifiersNormalAAA = "warning"
     }
-    
+
     let modifiersLargeAA = "ok"
     let modifiersLargeAAA = "ok"
     if (ratio < 3) {
@@ -29,7 +32,7 @@ const PreviewDisplay = ({foreground, background}) => {
         modifiersLargeAA = "ok"
         modifiersLargeAAA = "warning"
     }
-
+    
     return (
         <Fragment>
             <div className="preview-container">
@@ -48,7 +51,7 @@ const PreviewDisplay = ({foreground, background}) => {
                 </div>
             </div>
         </Fragment>
-    )
+    );
 }
 
 export default PreviewDisplay;
