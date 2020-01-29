@@ -10,7 +10,7 @@ const App = () => {
 		<ColoursProvider>
 			<div id="app">
 				<h1>Contrast Ratio Checker</h1>
-				<div className="main-content">
+				<div class="main-content">
 					<InputForm />
 					<ContrastDisplay />
 				</div>

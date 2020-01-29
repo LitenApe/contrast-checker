@@ -16,7 +16,7 @@ const ContrastDisplay = () => {
     }
 
     return (
-        <div className={ modifiers }>
+        <div class={ modifiers }>
             <span>Contrast Ratio</span>
             <span class="contrast-ratio" aria-live="polite">
                 <b>{ ratio }</b> : 1

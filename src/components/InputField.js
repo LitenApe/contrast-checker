@@ -2,9 +2,9 @@ import { h } from 'preact'
 
 const InputField = ({ label, ...rest }) => {
     return (
-        <label className="input-field">
+        <label class="input-field">
             <span>{ label }</span>
-            <input {...rest} />
+            <input type="text" {...rest} />
         </label>
     );
 }

@@ -35,18 +35,18 @@ const PreviewDisplay = () => {
     
     return (
         <Fragment>
-            <div className="preview-container">
-                <span className={modifiersNormalAA}>AA</span>
-                <span className={modifiersNormalAAA}>AAA</span>
-                <div className="preview" style={previewStyling}>
+            <div class="preview-container">
+                <span class={modifiersNormalAA}>AA</span>
+                <span class={modifiersNormalAAA}>AAA</span>
+                <div class="preview" style={previewStyling}>
                     A teddybear is a great companion
                 </div>
             </div>
 
-            <div className="preview-container">
-                <span className={modifiersLargeAA}>AA</span>
-                <span className={modifiersLargeAAA}>AAA</span>
-                <div className="preview large" style={previewStyling}>
+            <div class="preview-container">
+                <span class={modifiersLargeAA}>AA</span>
+                <span class={modifiersLargeAAA}>AAA</span>
+                <div class="preview large" style={previewStyling}>
                     A real bear is a scary friend
                 </div>
             </div>
